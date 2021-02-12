@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="37677d0b-e592-4f3c-bd71-2d3f07a7d5e0" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2020.1/project-config.xsd">
+  <name>Build</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_45" name="" type="python-runner">
+        <parameters>
+          <param name="command" value="file" />
+          <param name="pythonVersion" value="python3" />
+          <param name="scriptFile" value=".ycm_extra_conf.py" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_46" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="./test/rostest_avoidance_run.sh" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_47" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="./test/rostest_px4_run.sh" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_48" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="./Tools/check_submodules.sh" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_49" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="./Tools/docker_run.sh" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_50" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="./Tools/fix_headers.sh" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_51" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="./Tools/gazebo_sitl_multiple_run.sh" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_52" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="./Tools/jmavsim_run.sh" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_53" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="./Tools/mac_set_ulimit.sh" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_54" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="./Tools/qgc_meta_sync.sh" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_55" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="./Tools/run-shellcheck.sh" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_56" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="./Tools/sitl_multiple_run.sh" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_57" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="./Tools/sitl_run.sh" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_58" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="./Tools/uavcan_copy.sh" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_59" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="./Tools/upload.sh" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Px4Autopilot_HttpsGithubComChalamakinPx4AutopilotRefsHeadsMaster" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers>
+      <build-trigger id="vcsTrigger" type="vcsTrigger">
+        <parameters>
+          <param name="branchFilter" value="+:*" />
+          <param name="enableQueueOptimization" value="true" />
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <cleanup />
+  </settings>
+</build-type>
+
