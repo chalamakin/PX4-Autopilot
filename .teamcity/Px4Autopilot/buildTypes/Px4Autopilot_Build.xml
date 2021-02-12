@@ -111,6 +111,18 @@
           <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
+      <runner id="RUNNER_60" name="" type="teamcity-veracode-plugin">
+        <parameters>
+          <param name="appName" value="%env.TEAMCITY_PROJECT_NAME%" />
+          <param name="createProfile" value="true" />
+          <param name="createSandbox" value="true" />
+          <param name="criticality" value="VeryHigh" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="useGlobalCredentials" value="true" />
+          <param name="version" value="%env.BUILD_NUMBER%" />
+          <param name="waitForScan" value="false" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="Px4Autopilot_HttpsGithubComChalamakinPx4AutopilotRefsHeadsMaster" />
