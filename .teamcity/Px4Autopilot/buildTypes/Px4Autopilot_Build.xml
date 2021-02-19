@@ -115,7 +115,7 @@
         <parameters>
           <param name="appName" value="%env.TEAMCITY_PROJECT_NAME%" />
           <param name="createProfile" value="true" />
-          <param name="createSandbox" value="true" />
+          <param name="createSandbox" value="false" />
           <param name="criticality" value="VeryHigh" />
           <param name="teamcity.step.mode" value="default" />
           <param name="useGlobalCredentials" value="true" />
